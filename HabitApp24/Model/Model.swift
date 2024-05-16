@@ -9,17 +9,31 @@ import Foundation
 
 @Observable
 class Habits {
-    var arrOfHabits: [Habit]
+    var arrOfHabits = [Habit]() {
+        didSet{
+            if let encoded = try? JSONEncoder().encode(arrOfHabits){
+                UserDefaults.standard.set(encoded, forKey: "arrOfHabits")
+            }
+        }
+    }
     
     init(arrOfHabits: [Habit]) {
-        if !arrOfHabits.isEmpty{
-            self.arrOfHabits = arrOfHabits
-        } else {
-            self.arrOfHabits = [.init(title: "Drink Water 💧", state: false, amountOfDone: 7, description: "Drink cup of water 7 times per day."),
-                .init(title: "Training 🏋🏻", state: true, amountOfDone: 1, description: "Go to GYM"),
-                                .init(title: "Read Quran 📖", state: false, amountOfDone: 20),
-                .init(title: "Go for a walk 🚶🏻‍♂️", state: false, amountOfDone: 5, description: "Go for a walk every day.")
-            ]
+        if let data = UserDefaults.standard.data(forKey: "arrOfHabits"){
+            if let decoded = try? JSONDecoder().decode([Habit].self, from: data){
+                self.arrOfHabits = decoded
+                return
+            }
+        }
+        self.arrOfHabits = []
+    }
+    
+    func deleteHabit(id: ObjectIdentifier){
+        for i in 0..<arrOfHabits.count {
+            if arrOfHabits[i].id == id{
+                arrOfHabits.remove(at: i)
+                return
+            }
         }
     }
 }
+

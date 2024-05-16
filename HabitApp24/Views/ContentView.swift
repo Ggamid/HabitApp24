@@ -18,15 +18,21 @@ struct ContentView: View {
         NavigationStack{
             ZStack{
                 ScrollView{
-                    ForEach(habitModel.arrOfHabits, id: \.id){ habit in
-                        HabitCell(habit: habit)
-                    }
+                        ForEach(habitModel.arrOfHabits, id: \.id){ habit in
+                            HabitCell(habit: habit)
+                                .swipeActions{
+                                    Button("Delete"){
+                                        habitModel.deleteHabit(id: habit.id)
+                                    }
+                                }
+                        }
+                        .onDelete(perform: deleteHabit)
                 }
                 .navigationTitle("Habit")
                 .background(.gray.opacity(0.2))
                 .toolbar{
                     NavigationLink{
-                        
+                        AddHabitView(habits: habitModel)
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -38,4 +44,11 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+
+extension ContentView {
+    func deleteHabit(indexSet: IndexSet){
+        habitModel.arrOfHabits.remove(atOffsets: indexSet)
+    }
 }

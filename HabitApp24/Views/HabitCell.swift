@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HabitCell: View {
     @State var habit: Habit
-    @State var haha = 1
     
     var body: some View {
 
@@ -47,13 +46,13 @@ struct HabitCell: View {
                             .font(.system(size: 50))
                             .padding(.horizontal)
                             .foregroundStyle(.green)
-                            .animation(.bouncy(extraBounce: 10), value: haha)
+                            .animation(.bouncy(extraBounce: 10), value: habit.state)
                     }
                     
                     
                 }
             }
-            .frame(maxWidth: 400, maxHeight: 200)
+            .frame(maxWidth: 400, maxHeight: 190)
             .background(.white.opacity(0.9))
             .clipShape(.rect(cornerRadius: 30))
             .padding([.top, .trailing, .leading])
@@ -63,8 +62,8 @@ struct HabitCell: View {
 }
 
 #Preview {
-    HabitCell(habit: .init(title: "Drink Water 💧",
+    HabitCell(habit: .init(title: "Write a programmer",
                            state: false,
                            amountOfDone: 7,
-                           description: "Drink water 5 time per day."))
+                           description: "Drink water 5 time per day and share the progress"))
 }

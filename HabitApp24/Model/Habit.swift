@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class Habit: Identifiable{
+class Habit: Identifiable, Codable {
     var title: String
     var state: Bool
     var numberOfReps: Int
