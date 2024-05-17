@@ -15,6 +15,7 @@
 		870187202BF64EAB0020968F /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701871F2BF64EAB0020968F /* HabitCell.swift */; };
 		870187222BF65A210020968F /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870187212BF65A210020968F /* AddHabitView.swift */; };
 		870187242BF65A9B0020968F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870187232BF65A9B0020968F /* Model.swift */; };
+		87BB151A2BF76DF600FD11C1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB15192BF76DF600FD11C1 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8701871F2BF64EAB0020968F /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		870187212BF65A210020968F /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		870187232BF65A9B0020968F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		87BB15192BF76DF600FD11C1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				8701870F2BF64D9F0020968F /* ContentView.swift */,
 				8701871F2BF64EAB0020968F /* HabitCell.swift */,
 				870187212BF65A210020968F /* AddHabitView.swift */,
+				87BB15192BF76DF600FD11C1 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				8701871C2BF64E000020968F /* Habit.swift in Sources */,
 				870187102BF64D9F0020968F /* ContentView.swift in Sources */,
 				870187202BF64EAB0020968F /* HabitCell.swift in Sources */,
+				87BB151A2BF76DF600FD11C1 /* DetailView.swift in Sources */,
 				870187242BF65A9B0020968F /* Model.swift in Sources */,
 				8701870E2BF64D9F0020968F /* HabitApp24App.swift in Sources */,
 				870187222BF65A210020968F /* AddHabitView.swift in Sources */,

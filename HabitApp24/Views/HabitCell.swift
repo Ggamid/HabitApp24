@@ -31,6 +31,7 @@ struct HabitCell: View {
                             
                             
                     }
+                    .foregroundStyle(.black)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                     .padding(.leading, 15)

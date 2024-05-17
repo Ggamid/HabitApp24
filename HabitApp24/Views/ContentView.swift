@@ -13,29 +13,26 @@ struct ContentView: View {
     
     @State var habitModel: Habits = Habits(arrOfHabits: [])
     
-
     var body: some View {
         NavigationStack{
-            ZStack{
-                ScrollView{
-                        ForEach(habitModel.arrOfHabits, id: \.id){ habit in
-                            HabitCell(habit: habit)
-                                .swipeActions{
-                                    Button("Delete"){
-                                        habitModel.deleteHabit(id: habit.id)
-                                    }
-                                }
-                        }
-                        .onDelete(perform: deleteHabit)
-                }
-                .navigationTitle("Habit")
-                .background(.gray.opacity(0.2))
-                .toolbar{
+            ScrollView{
+                ForEach(habitModel.arrOfHabits, id: \.id){ habit in
                     NavigationLink{
-                        AddHabitView(habits: habitModel)
-                    } label: {
-                        Image(systemName: "plus")
+                        DetailView(habit: habit, habits: habitModel)
+                    } label:{
+                        HabitCell(habit: habit)
                     }
+                    
+                    }
+
+            }
+            .navigationTitle("Habit")
+            .background(.gray.opacity(0.2))
+            .toolbar{
+                NavigationLink{
+                    AddHabitView(habits: habitModel)
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
         }
